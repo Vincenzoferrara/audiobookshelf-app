@@ -2,28 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Android App (with IP connection)",
-      "type": "npm",
-      "script": "devlive", // Invoca lo script che usa l'IP
-      "isBackground": true,
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": false
-      },
-      "detail": "Avvia l'app Android con live reload, si connette all'IP del PC."
-    },
-    {
-      "label": "Run Android App (no IP connection)",
-      "type": "npm",
-      "script": "devlive-no-pass-ip", // Invoca lo script che NON usa l'IP
-      "isBackground": true,
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": false
-      },
-      "detail": "Avvia l'app Android in modalità standalone, nessuna connessione all'IP del PC."
+      "label": "Debug task",
+      "type": "shell",
+      "command": "npm install && npm run generate && npm run build && npx cap sync && ionic cap run --external"
     }
   ]
 }
